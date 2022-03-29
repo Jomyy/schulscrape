@@ -19,10 +19,10 @@ const url = "https://infoscreen.friedensschule.de";
     
     var fs = require('fs');
     var stringdat = JSON.stringify(data);
-    var newstr = stringdat.replace(/\n|\t/g, '');
-    console.log(newstr)
-    fs.writeFile("fplan.json",newstr, function(err, result) {
-        if(err) console.log('error', err);
+    
+    
+    fs.writeFile("fplan.json",stringdat.replace(/\\n/g, '').replace(/\\n/g, '').replace(/\\t/g, '').replace(/\\t/g, ''), function(err, result) {
+        
     });
     //#endregion
 
@@ -68,5 +68,5 @@ const url = "https://infoscreen.friedensschule.de";
     //handle error
   });
       loop()
-    }, 9000); //9000 = 9000ms = 9s 600000
+    }, 600000); //9000 = 9000ms = 9s 600000
   }());
