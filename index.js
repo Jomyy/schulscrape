@@ -18,7 +18,7 @@ const url = "https://infoscreen.friedensschule.de";
     data.shift();
     
     var fs = require('fs');
-    fs.writeFile("fplan.json", JSON.stringify(data), function(err, result) {
+    fs.writeFile("fplan.json", JSON.stringify(data).trim(), function(err, result) {
         if(err) console.log('error', err);
     });
     //#endregion
