@@ -32,23 +32,23 @@ const url = "https://infoscreen.friedensschule.de";
           // put every tr in a json array
           let vplanarr = $(vplans).find("tr");
           vplanarr.map((i, vplan) => {
-            let vplanobj = {};
+            let vplanitemobj = [];
             let vplanarr = $(vplan).find("td");
             vplanarr.map((i, vplan) => {
               if (i != 0) {
-                vplanobj[i - 1] = $(vplan).text();
+                vplanitemobj.push($(vplan).text());
               }
             });
             if (j == 0) {
-              if (vplanobj[1] != undefined) {
-                stundenfirst.push(vplanobj);
+              if (vplanitemobj[1] != undefined) {
+                stundenfirst.push(vplanitemobj);
               }
             }
             if (j == 1) {
-              if (vplanobj[1] != undefined) {
-                stundenfirst.push(vplanobj);
+              if (vplanitemobj[1] != undefined) {
+                stundenfirst.push(vplanitemobj);
               }
-              stundensecond.push(vplanobj);
+              stundensecond.push(vplanitemobj);
             }
           });
           stundenfirst.shift();
