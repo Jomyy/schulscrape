@@ -39,12 +39,12 @@ const url = "https://infoscreen.friedensschule.de";
                 vplanitemobj.push($(vplan).text());
               }
             });
-            if (j == 0) {
+            if (j == 1) {
               if (vplanitemobj[1] != undefined) {
-                stundenfirst.push(vplanitemobj);
+                stundensecond.push(vplanitemobj);
               }
             }
-            if (j == 1) {
+            if (j == 0) {
               if (vplanitemobj[1] != undefined) {
                 stundenfirst.push(vplanitemobj);
               }
@@ -69,5 +69,5 @@ const url = "https://infoscreen.friedensschule.de";
         //handle error
       });
     loop();
-  }, 600000); //9000 = 9000ms = 9s 600000
+  }, 9000); //9000 = 9000ms = 9s 600000
 })();
