@@ -58,10 +58,10 @@ const url = "https://infoscreen.friedensschule.de";
         stundenfirst.shift();
         stundensecond.shift();
         console.log(stundensecond.length);
-        fs.writeFile("vplan.json", JSON.stringify(stundensecond), function (err, result) {
+        fs.writeFile("vplannext.json", JSON.stringify(stundensecond), function (err, result) {
           if (err) console.log("error", err);
         });
-        fs.writeFile("vplannext.json", JSON.stringify(stundenfirst), function (err, result) {
+        fs.writeFile("vplan.json", JSON.stringify(stundenfirst), function (err, result) {
           if (err) console.log("error", err);
         });
       })
@@ -69,5 +69,5 @@ const url = "https://infoscreen.friedensschule.de";
         //handle error
       });
     loop();
-  }, 9000); //9000 = 9000ms = 9s 600000
+  }, 600000); //9000 = 9000ms = 9s 600000
 })();
